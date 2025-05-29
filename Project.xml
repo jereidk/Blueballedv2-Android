@@ -3,7 +3,7 @@
 	<!-- _________________________ Application Settings _________________________ -->
 
 	<app 
-		title="Friday Night Funkin': Blueballed V2 OPT" 
+		title="Blueballed V2 OPT" 
 		file="BlueballedV2Opt" 
 		packageName="com.jereidk.blueballedv2opt" 
 		package="com.jereidk.blueballedv2opt"
