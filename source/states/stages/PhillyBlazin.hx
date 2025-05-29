@@ -164,8 +164,6 @@ class PhillyBlazin extends BaseStage
 
 	override function update(elapsed:Float)
 	{
-		if(scrollingSky != null) scrollingSky.scrollX -= elapsed * 35;
-
 		if(rainShader != null)
 		{
 			rainShader.updateViewInfo(FlxG.width, FlxG.height, FlxG.camera);
