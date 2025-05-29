@@ -74,7 +74,7 @@ function createAnimatedSprite(name, imagePath, x, y, scaleX, scaleY, animationPr
 end
 
 function onCreate()
-    luaDebugMode = true
+    --luaDebugMode = true
     spritesLoaded = {}
 
     makeLuaSprite('UpperBar(With HUD)', '', -110, -260)
