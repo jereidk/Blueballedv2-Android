@@ -3,7 +3,6 @@ package states.stages;
 import openfl.filters.ShaderFilter;
 import shaders.RainShader;
 
-import flixel.addons.display.FlxTiledSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 
 import substates.GameOverSubstate;
@@ -33,7 +32,6 @@ class PhillyStreets extends BaseStage
 	var rainShaderStartIntensity:Float = 0;
 	var rainShaderEndIntensity:Float = 0;
 	
-	var scrollingSky:FlxTiledSprite;
 	var phillyTraffic:BGSprite;
 
 	var phillyCars:BGSprite;
@@ -49,15 +47,6 @@ class PhillyStreets extends BaseStage
 	{
 		if(!ClientPrefs.data.lowQuality)
 		{
-			var skyImage = Paths.image('phillyStreets/phillySkybox');
-			scrollingSky = new FlxTiledSprite(skyImage, skyImage.width + 400, skyImage.height, true, false);
-			scrollingSky.antialiasing = ClientPrefs.data.antialiasing;
-			scrollingSky.setPosition(-650, -375);
-			scrollingSky.scrollFactor.set(0.1, 0.1);
-			scrollingSky.scale.set(0.65, 0.65);
-			add(scrollingSky);
-			darkenable.push(scrollingSky);
-		
 			var phillySkyline:BGSprite = new BGSprite('phillyStreets/phillySkyline', -545, -273, 0.2, 0.2);
 			add(phillySkyline);
 			darkenable.push(phillySkyline);
