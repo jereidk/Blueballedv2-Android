@@ -24,7 +24,7 @@ on:
 
 env:
   HAXE_VERSION: 4.3.6
-  PROJECT_NAME: PsychEngine
+  PROJECT_NAME: Blueballedv2
 
 jobs:
   build:
@@ -69,11 +69,17 @@ jobs:
         if: inputs.name == 'iOS'
         run: |
           brew install ldid
-          cd export/release/ios/build/Release-iphoneos/${{ env.PROJECT_NAME }}.app
+          APP_DIR=$(ls -d export/release/ios/build/Release-iphoneos/*.app 2>/dev/null | head -n 1)
+          if [ ! -d "$APP_DIR" ]; then
+            echo "No se encontró el directorio .app en export/release/ios/build/Release-iphoneos/"
+            ls export/release/ios/build/Release-iphoneos/ || true
+            exit 1
+          fi
+          cd "$APP_DIR"
           ldid -S../../../${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }}.entitlements ${{ env.PROJECT_NAME }}
           cd ..
           mkdir Payload
-          mv ${{ env.PROJECT_NAME }}.app Payload
+          mv "$(basename "$APP_DIR")" Payload
           zip -r ${{ env.PROJECT_NAME }}.ipa Payload
 
       - name: Upload Artifact
