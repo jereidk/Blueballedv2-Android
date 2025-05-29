@@ -14,7 +14,6 @@ class PhillyBlazin extends BaseStage
 	var rainShader:RainShader;
 	var rainTimeScale:Float = 1;
 
-	var scrollingSky:FlxTiledSprite;
 	var skyAdditive:BGSprite;
 	var lightning:BGSprite;
 	var foregroundMultiply:BGSprite;
