@@ -511,8 +511,6 @@ class PhillyStreets extends BaseStage
 	var animationFinished:Bool = false;
 	override function update(elapsed:Float)
 	{
-		if(scrollingSky != null) scrollingSky.scrollX -= elapsed * 22;
-
 		if(rainShader != null)
 		{
 			var remappedIntensityValue:Float = FlxMath.remapToRange(Conductor.songPosition, 0, (FlxG.sound.music != null ? FlxG.sound.music.length : 0), rainShaderStartIntensity, rainShaderEndIntensity);
